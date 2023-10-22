@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #0b1e27;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .spinner-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .spinner {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            animation: rotate 3s linear infinite;
+        }
+
+        .cube {
+            width: 40px;
+            height: 40px;
+            background-color: #ff5733;
+            /* Change the color as desired */
+            position: absolute;
+            transform-style: preserve-3d;
+            animation: spin 2s linear infinite;
+        }
+
+        .cube:nth-child(2) {
+            transform: rotateY(90deg);
+            animation-delay: 0.1s;
+        }
+
+        .cube:nth-child(3) {
+            transform: rotateX(90deg);
+            animation-delay: 0.2s;
+        }
+
+        .cube:nth-child(4) {
+            transform: rotateY(-90deg);
+            animation-delay: 0.3s;
+        }
+
+        .cube:nth-child(5) {
+            transform: rotateX(-90deg);
+            animation-delay: 0.4s;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotateX(0) rotateY(0);
+            }
+
+            100% {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="spinner-container">
+        <div class="spinner">
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+            <div class="cube"></div>
+        </div>
+    </div>
+</body>
+
+</html>
